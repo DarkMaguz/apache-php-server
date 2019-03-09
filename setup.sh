@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-sudo rm -rf letsencrypt
+sudo rm -rf letsencrypt/
 mkdir -p letsencrypt/etc/live/example.com
 
 # Build the docker image
@@ -21,7 +21,3 @@ docker rm -f tmp
 sleep 5
 rm -rf letsencrypt/etc/live/example.com
 ./get-cert.sh
-
-# Run the docker container
-#docker run -tid -v $PWD/www:/var/www -v $PWD/letsencrypt/etc:/etc/letsencrypt -p 80:80 -p 443:443 --name "apache-php-server" darkmagus/apache-php-server
-
