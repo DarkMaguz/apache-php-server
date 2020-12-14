@@ -1,7 +1,7 @@
 FROM debian:buster
 
 # Install services
-RUN apt-get update && apt-get install -y apache2 libapache2-mod-php php nano ssl-cert
+RUN apt-get update && apt-get install -y apache2 libapache2-mod-php php php-mysql nano ssl-cert
 
 # Prepair app directory
 RUN mkdir -p /var/www/app
